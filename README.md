@@ -34,3 +34,7 @@ The author of the "Nix Pills" listed above did his thesis on Nix.  It's a good r
 # Managine private nix packages outside of nixpkgs
 
 http://sandervanderburg.blogspot.com/2014/07/managing-private-nix-packages-outside.html
+
+# Nix Wants
+
+* The Nix expression language is extremely powerful and extensible.  However, I find there's a lack of documentation for functions that have been implemented in nixpkgs.  I think the lack of documentation could be mitigated by adding support for a standard form for "in-source documentation".  This would encourage maintainers to provide good documentation and help keep it in sync with the implementation, though, it does not guarantee it.

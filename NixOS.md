@@ -127,7 +127,7 @@ exit
 * TODO: download profiles from online repo
 
 ### VirtualBox Extras
-Add this to `/etc/nixos/configuration.nix`:
+Add this to `/etc/nixos/hardware-configuration.nix`:
 ```
   virtualisation.virtualbox.guest.enable = true;
 ```

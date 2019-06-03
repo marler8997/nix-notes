@@ -1,5 +1,6 @@
 # My Documents
 
+* [Reference](Reference.md)
 * [Tutorial](Tutorial.md)
 * [How to use Nix as a Package Manager](How-to-use-Nix-as-a-Package-Manager.md)
 * [Chroot Nix Profile](Chroot-Nix-Profile.md)

@@ -3,6 +3,9 @@
 
 Used to manage packages, profiles/environments.
 
+Note that `nix-env` changes behavior depending on if you are running as a user or as root.  If you run commands as root, then it will manage a profile that is shared by all users (`/nix/var/nix/profiles/default`), but running as a non-root user will only affect that user's profile. (i.e. `sudo nix-env -iA nixos.hello` will install `hello` for all users).
+
+
 ```
 # search for packages
 nix-env -qaP '<regex>'

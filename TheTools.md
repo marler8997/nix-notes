@@ -8,12 +8,25 @@ Used to manage packages, profiles/environments.
 nix-env -qaP '<regex>'
 nix-env -qaP '.*emacs.*'
 
-# install a package
-nix-env -i hello
+# see what packages are installed to the current user-profile
+nix-env -q
+# or
+nix-env --query
+
 # install a package using the top-level derivation name
+nix-env -iA $CHANNEL.$PACKAGE_ATTR_NAME (Run: "[sudo] nix-channel --list" to see channels)
+# i.e. on Nixos
+nix-env -iA nixos.bsdgames
+# i.e. with Nix as a Package Manager
 nix-env -iA nixpkgs.bsdgames
 
-# erase a package
+# You can also use "nix-env -i package" to install a package to the user profile
+# using the package "name", however, this is very very slow, so I never do it
+#
+# Also note that installing a library to the user-profile doesn't setup all the environment
+# variables to build tools to find then, use "nix-shell -p package" for that
+
+# erase a package from the current user-profile
 nix-env -e hello
 nix-env --uninstall hello
 
@@ -60,6 +73,7 @@ nix-store -r /nix/store/<hash>-<name>.drv
 
 A nix channel is just a place to get derivations from.
 
+> NOTE: on my nixos, I need to run these with sudo, even when NIX_REMOTE=daemon is set
 ```
 nix-channel --list
 
